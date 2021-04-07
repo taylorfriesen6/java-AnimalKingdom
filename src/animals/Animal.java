@@ -17,6 +17,14 @@ public abstract class Animal {
   public abstract String breathe();
   public abstract String reproduce();
 
+  public String getName() {
+    return name;
+  }
+
+  public int getYearNamed() {
+    return yearNamed;
+  }
+
   @Override
   public String toString() {
     return 
@@ -24,7 +32,17 @@ public abstract class Animal {
       + "id=" + this.id + ", "
       + "name='" + this.name + "', "
       + "yearNamed=" + this.yearNamed
-      + "}"
+      + "}\n"
     ;
+  }
+
+  public void display() {
+    System.out.println(
+      this.name + " "
+      + this.reproduce() + " "
+      + this.move() + " "
+      + this.breathe() + " "
+      + this.yearNamed
+    );
   }
 }
